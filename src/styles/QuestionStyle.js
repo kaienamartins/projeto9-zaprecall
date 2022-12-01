@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const Style = createGlobalStyle`
+const QuestionStyle = createGlobalStyle`
   .pergunta-fechada {
   width: 300px;
   height: 35px;
@@ -50,4 +50,4 @@ const Style = createGlobalStyle`
 }
 `
 
-export default Style;
+export default QuestionStyle;

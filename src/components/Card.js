@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Play from "../assets/img/seta_play.png";
 import Seta from "../assets/img/seta_virar.png";
-import Style from "../styles/Style";
+import QuestionStyle from "../styles/QuestionStyle";
 
 export default function Card({ question, answer }) {
   const [front, setFront] = useState(true);
@@ -18,7 +18,7 @@ export default function Card({ question, answer }) {
 
   return (
     <div className={classList} onClick={handleClick} src={iconShown}>
-      <Style />
+      <QuestionStyle/>
       <p>{text}</p>
       <img src={iconShown} alt={icon} />
     </div>
