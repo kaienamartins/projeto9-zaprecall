@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Header from "./components/Header";
 import GlobalStyle from "./styles/GlobalStyle";
-import Card from "./components/Card";
 
 function App() {
 
@@ -9,7 +8,6 @@ function App() {
     <ScreenContainer>
       <GlobalStyle />
       <Header/>
-      <Card/>
       <Footer></Footer>
     </ScreenContainer>
   );
@@ -47,3 +45,4 @@ const Footer = styled.div`
 `;
 
 export default App;
+
