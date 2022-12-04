@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Card from "./Card";
 
-const cards = [
+const flashcards = [
   {
     id: 1,
     question: "O que é JSX?",
@@ -25,13 +25,16 @@ const cards = [
 
 export default function CardDeck(props) {
   return (
-      <Flashcards>
-        {cards.map(() => (
-          <Card
-            key={props.id}
-          />
-        ))}
-      </Flashcards>
+    <Flashcards>
+      {flashcards.map((obj, index) => (
+        <Card
+          counter={props.counter}
+          setCounter={props.setCounter}
+          dados={obj}
+          key={index}
+        />
+      ))}
+    </Flashcards>
   );
 }
 

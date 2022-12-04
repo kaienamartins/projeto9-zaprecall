@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import CardDeck from "./components/CardDeck";
+import CardDeck from "./components/CardDeck"
 import Header from "./components/Header";
 import GlobalStyle from "./styles/GlobalStyle";
 import Footer from "./components/Footer";
@@ -12,7 +12,7 @@ function App() {
     <ScreenContainer>
       <GlobalStyle />
       <Header />
-      <CardDeck/>
+      <CardDeck counter={counter} setCounter={setCounter} />
       <Footer counter={counter} />
     </ScreenContainer>
   );
