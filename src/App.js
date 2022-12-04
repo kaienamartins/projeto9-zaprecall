@@ -1,18 +1,22 @@
+import { useState } from "react";
 import styled from "styled-components";
+import CardDeck from "./components/CardDeck";
 import Header from "./components/Header";
 import GlobalStyle from "./styles/GlobalStyle";
+import Footer from "./components/Footer";
 
 function App() {
+  const [counter, setCounter] = useState(0);
 
   return (
     <ScreenContainer>
       <GlobalStyle />
-      <Header/>
-      <Footer></Footer>
+      <Header />
+      <CardDeck/>
+      <Footer counter={counter} />
     </ScreenContainer>
   );
 }
-
 
 const ScreenContainer = styled.div`
   background-color: #fb6b6b;
@@ -26,23 +30,4 @@ const ScreenContainer = styled.div`
   padding-bottom: 200px;
 `;
 
-
-const Footer = styled.div`
-  width: 100%;
-  min-height: 50px;
-  background-color: #ffffff;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Recursive";
-  font-weight: 400;
-  font-size: 18px;
-  color: #333333;
-  padding: 10px;
-`;
-
 export default App;
-
