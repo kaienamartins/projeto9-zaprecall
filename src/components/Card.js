@@ -3,6 +3,7 @@ import WrongIcon from "../assets/img/icone_erro.png";
 import RightIcon from "../assets/img/icone_certo.png";
 import AlmostIcon from "../assets/img/icone_quase.png";
 import TurnCard from "../assets/img/seta_virar.png";
+import styled from "styled-components";
 
 export default function Flashcard() {
   return (
@@ -85,21 +86,3 @@ const Answer = styled.div`
   justify-content: space-between;
 `;
 
-const BtnWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  border: none;
-`;
-
-const Btn = styled.button`
-  width: 85px;
-  height: 33px;
-  border-radius: 5px;
-  border: none;
-  font-family: "Recursive", sans-serif;
-  color: #ffffff;
-  &:hover {
-    cursor: pointer;
-  }
-`;
