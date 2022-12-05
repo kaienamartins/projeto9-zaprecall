@@ -23,22 +23,26 @@ export default function Flashcard(props) {
     setOpenAnswer(true);
   }
 
-
-
   return (
     <>
-      <Closed cor={status.cor} onClick={showQuestion}>
-        <p>Pergunta {props.dados.id}</p>
-        <img src={status.icon} alt="/" />
-      </Closed>
-      <Question>
+      {closed && (
+        <Closed cor={status.cor} onClick={showQuestion}>
+          <p>Pergunta {props.dados.id}</p>
+          <img src={status.icon} alt="/" />
+        </Closed>
+      )}
+      {openQuestion && (
+        <Question>
           <p>{props.dados.question}</p>
           <img onClick={showAnswer} src={TurnCard} alt="/" />
-      </Question>
-      <Answer>
-        <p>{props.dados.answer}</p>
-        <Buttons/>
-      </Answer>
+        </Question>
+      )}
+      {openAnswer && (
+        <Answer>
+          <p>{props.dados.answer}</p>
+          <Buttons/>
+        </Answer>
+      )}
     </>
   );
 }
@@ -63,6 +67,9 @@ const Closed = styled.div`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
+    color: ${(props) => props.cor};
+    text-decoration-line: ${(props) =>
+      props.cor !== "#333333" ? "line-through" : "none"};
   }
 `;
 

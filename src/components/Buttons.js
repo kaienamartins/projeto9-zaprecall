@@ -3,13 +3,13 @@ import styled from "styled-components";
 export default function Buttons() {
   return (
     <BtnWrapper>
-      <Btn>
+      <Btn cor="#FF3030">
         Não lembrei
       </Btn>
-      <Btn>
+      <Btn cor="#FF922E">
         Quase não lembrei
       </Btn>
-      <Btn>
+      <Btn cor="#2FBE34">
         Zap!
       </Btn>
     </BtnWrapper>
@@ -19,7 +19,6 @@ export default function Buttons() {
 const BtnWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 5px;
   border: none;
 `;
 
