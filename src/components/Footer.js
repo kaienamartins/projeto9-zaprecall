@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Footer(props) {
   return (
     <>
-      <FooterWrapper>{props.counter}/4 concluídos</FooterWrapper>
+      <FooterWrapper data-test="footer">{props.counter}/4 concluídos</FooterWrapper>
     </>
   );
 }

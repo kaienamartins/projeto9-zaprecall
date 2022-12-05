@@ -3,13 +3,13 @@ import styled from "styled-components";
 export default function Buttons({right, almost, wrong}) {
   return (
     <BtnWrapper>
-      <Btn cor="#FF3030" onClick={wrong}>
+      <Btn color="#FF3030" onClick={wrong} data-test="no-btn">
         Não lembrei
       </Btn>
-      <Btn cor="#FF922E" onClick={almost}>
+      <Btn color="#FF922E" onClick={almost} data-test="partial-btn">
         Quase não lembrei
       </Btn>
-      <Btn cor="#2FBE34" onClick={right}>
+      <Btn color="#2FBE34" onClick={right} data-test="zap-btn">
         Zap!
       </Btn>
     </BtnWrapper>
@@ -28,7 +28,7 @@ const Btn = styled.button`
   border-radius: 5px;
   border: none;
   font-family: "Recursive", sans-serif;
-  background-color: ${(props) => props.cor};
+  background-color: ${(props) => props.color};
   margin-left: 10px;
   color: #ffffff;
   &:hover {

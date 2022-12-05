@@ -25,7 +25,7 @@ const flashcards = [
 
 export default function CardDeck(props) {
   return (
-    <Flashcards>
+    <Flashcards data-test="flashcard">
       {flashcards.map((obj, index) => (
         <Card
           counter={props.counter}

@@ -8,7 +8,8 @@ import { useState } from "react";
 import Buttons from "./Buttons";
 
 export default function Flashcard(props) {
-  const [status, setStatus] = useState({ cor: "#333333", icon: Play });
+  const [putColour, setPutColour] = useState({color: "#333"})
+  const [putIcon, setPutIcon] = useState({icon: Play});
   const [closed, setClosed] = useState(true);
   const [openQuestion, setOpenQuestion] = useState(false);
   const [openAnswer, setOpenAnswer] = useState(false);
@@ -24,24 +25,30 @@ export default function Flashcard(props) {
   }
 
   function Wrong() {
-    let newSet = { cor: "#FF3030", icon: WrongIcon };
-    setStatus(newSet);
+    let newColour = { color: "#FF3030"};
+    let newIcon = {icon: WrongIcon} //data-test="no-icon"
+    setPutColour(newColour);
+    setPutIcon(newIcon)
     props.setCounter(props.counter + 1);
     setClosed(true);
     setOpenAnswer(false);
   }
 
   function Almost() {
-    let newSet = { cor: "#FF922E", icon: AlmostIcon };
-    setStatus(newSet);
+    let newColour = { color: "#FF922E"};
+    let newIcon = {icon: AlmostIcon}
+    setPutColour(newColour);
+    setPutIcon(newIcon)
     props.setCounter(props.counter + 1);
     setClosed(true);
     setOpenAnswer(false);
   }
 
   function Right() {
-    let newSet = { cor: "#2FBE34", icon: RightIcon };
-    setStatus(newSet);
+    let newColour = { color: "#2FBE34"};
+    let newIcon = {icon: RightIcon}
+    setPutColour(newColour);
+    setPutIcon(newIcon)
     props.setCounter(props.counter + 1);
     setClosed(true);
     setOpenAnswer(false);
@@ -50,19 +57,19 @@ export default function Flashcard(props) {
   return (
     <>
       {closed && (
-        <Closed cor={status.cor} onClick={showQuestion}>
+        <Closed color={putColour.color} onClick={showQuestion} data-test="flashcard-text">
           <p>Pergunta {props.dados.id}</p>
-          <img src={status.icon} alt="/" />
+          <img data-test="play-btn" src={putIcon.icon} alt=""/>
         </Closed>
       )}
       {openQuestion && (
-        <Question>
+        <Question data-test="flashcard-text">
           <p>{props.dados.question}</p>
-          <img onClick={showAnswer} src={TurnCard} alt="/" />
+          <img data-test="turn-btn" onClick={showAnswer} src={TurnCard} alt="/" />
         </Question>
       )}
       {openAnswer && (
-        <Answer>
+        <Answer data-test="flashcard-text">
           <p>{props.dados.answer}</p>
           <Buttons wrong={Wrong} almost={Almost} right={Right}/>
         </Answer>
@@ -91,9 +98,9 @@ const Closed = styled.div`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    color: ${(props) => props.cor};
+    color: ${(props) => props.color};
     text-decoration-line: ${(props) =>
-      props.cor !== "#333333" ? "line-through" : "none"};
+      props.color !== "#333" ? "line-through" : "none"};
   }
 `;
 
