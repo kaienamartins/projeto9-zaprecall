@@ -23,6 +23,30 @@ export default function Flashcard(props) {
     setOpenAnswer(true);
   }
 
+  function Wrong() {
+    let newSet = { cor: "#FF3030", icon: WrongIcon };
+    setStatus(newSet);
+    props.setCounter(props.counter + 1);
+    setClosed(true);
+    setOpenAnswer(false);
+  }
+
+  function Almost() {
+    let newSet = { cor: "#FF922E", icon: AlmostIcon };
+    setStatus(newSet);
+    props.setCounter(props.counter + 1);
+    setClosed(true);
+    setOpenAnswer(false);
+  }
+
+  function Right() {
+    let newSet = { cor: "#2FBE34", icon: RightIcon };
+    setStatus(newSet);
+    props.setCounter(props.counter + 1);
+    setClosed(true);
+    setOpenAnswer(false);
+  }
+
   return (
     <>
       {closed && (
@@ -40,7 +64,7 @@ export default function Flashcard(props) {
       {openAnswer && (
         <Answer>
           <p>{props.dados.answer}</p>
-          <Buttons/>
+          <Buttons wrong={Wrong} almost={Almost} right={Right}/>
         </Answer>
       )}
     </>

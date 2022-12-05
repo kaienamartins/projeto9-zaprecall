@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export default function Buttons() {
+export default function Buttons({right, almost, wrong}) {
   return (
     <BtnWrapper>
-      <Btn cor="#FF3030">
+      <Btn cor="#FF3030" onClick={wrong}>
         Não lembrei
       </Btn>
-      <Btn cor="#FF922E">
+      <Btn cor="#FF922E" onClick={almost}>
         Quase não lembrei
       </Btn>
-      <Btn cor="#2FBE34">
+      <Btn cor="#2FBE34" onClick={right}>
         Zap!
       </Btn>
     </BtnWrapper>
@@ -28,6 +28,8 @@ const Btn = styled.button`
   border-radius: 5px;
   border: none;
   font-family: "Recursive", sans-serif;
+  background-color: ${(props) => props.cor};
+  margin-left: 10px;
   color: #ffffff;
   &:hover {
     cursor: pointer;
