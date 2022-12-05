@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 
 function App() {
   const [counter, setCounter] = useState(0);
+  if(counter > 4) {
+    setCounter(4)
+  }
 
   return (
     <ScreenContainer>
